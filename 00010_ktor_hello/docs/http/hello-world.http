@@ -1,0 +1,10 @@
+GET http://localhost:8080
+
+> {%
+    client.test("Request executed successfully", function() {
+        client.assert(response.status === 200, "Response status is not 200");
+    });
+    client.test("Request body contains 'Hello World!'", function () {
+        client.assert(response.body === "Hello World!", "Response body is not 'Hello World!'");
+    })
+%}
